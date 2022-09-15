@@ -1,5 +1,6 @@
 const { ethers, run, network } = require("hardhat")
 const fs = require("fs-extra")
+const env = require("hardhat")
 require("dotenv").config()
 
 async function main() {
@@ -9,6 +10,10 @@ async function main() {
     await SimpleStorage.deployed()
     console.log(`Deployed contract to ${SimpleStorage.address}`)
     console.log(network.config)
+    if (network.config.chainId == 5 && process.env.ETHERSCAN_API_KEY) {
+        await SimpleStorage.deployTransaction.wait(6)
+        await verify(SimpleStorage.address, [])
+    }
 }
 
 async function verify(contractAddress, args) {
