@@ -1,11 +1,11 @@
-const { network } = require("hardhat")
+const { network, ethers } = require("hardhat")
 const { developmentChains, V3MockArgs } = require("../helper-hardhat-config")
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments
     const { deployer } = await getNamedAccounts()
 
-    const curNetwork = await ethers.getDefaultProvider().getNetwork()
+    const curNetwork = await ethers.provider.getNetwork()
     log(`Network: ${curNetwork.name}`)
     log(`ChainId: ${curNetwork.chainId}`)
 
