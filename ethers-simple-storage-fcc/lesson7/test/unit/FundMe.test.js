@@ -1,4 +1,4 @@
-const { assert } = require("chai")
+const { assert, expect } = require("chai")
 const { deployments, ethers, getNamedAccounts, log } = require("hardhat")
 
 describe("FundMe", function () {
@@ -20,6 +20,7 @@ describe("FundMe", function () {
         it("sets the aggregator addresses correctly", async () => {
             const response = await fundMe.priceFeed()
             assert.equal(response, mockV3Aggregator.address)
+            expect(mockV3Aggregator.withdraw()).to.changeEtherBalance
         })
     })
 })
