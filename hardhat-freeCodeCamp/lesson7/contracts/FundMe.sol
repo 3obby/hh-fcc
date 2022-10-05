@@ -1,4 +1,26 @@
 // SPDX-License-Identifier: MIT
+
+//pragma
+//imports
+//error codes: <contract_name>__<error>
+//interfaces/libraries that aren't imported
+//contracts
+////type declarations
+////state vars
+////events
+////modifiers
+
+////functions
+//functions order:
+//constructor
+//recieve
+//fallback
+//external
+//public
+//internal
+//private
+//view/pure
+
 pragma solidity ^0.8.8;
 
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
