@@ -21,14 +21,12 @@
 //private
 //view/pure
 
-pragma solidity ^0.8.8;
+pragma solidity ^0.8.0;
 
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./PriceConverter.sol";
 
 error FundMe__NotOwner();
-
-//interfaces/libraries
 
 contract FundMe {
     using PriceConverter for uint256;
