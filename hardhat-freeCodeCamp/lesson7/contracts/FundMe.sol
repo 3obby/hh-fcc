@@ -36,7 +36,7 @@ contract FundMe {
 
     // Could we make this constant?  /* hint: no! We should make it immutable! */
     address public immutable i_owner;
-    uint256 public constant MINIMUM_USD = 50 * 10**18;
+    uint256 public constant MINIMUM_USD = 5 * 1**8;
 
     AggregatorV3Interface public priceFeed;
 
