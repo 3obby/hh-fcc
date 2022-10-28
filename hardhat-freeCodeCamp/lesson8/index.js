@@ -22,7 +22,7 @@ async function fund(){
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
         const contract = new ethers.Contract(address, abi, signer)
-        const resp = await contract.fund({value: ethers.utils.parseEther("0.01")})
+        const resp = await contract.fund({value: ethers.utils.parseEther("0.05")})
         console.log(signer);
         
     }
